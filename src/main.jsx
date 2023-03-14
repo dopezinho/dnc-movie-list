@@ -1,12 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from './App';
+import Home from './views/Home/Home';
 import "./index.scss";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <App />,
+    children: [{
+      path:"",
+      element: <Home />,
+    }]
   },
 ]);
 
