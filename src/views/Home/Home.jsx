@@ -1,7 +1,27 @@
+import { useEffect, useState } from "react";
+import { MovieService } from "../../api/MovieService";
+
 
 const Home = () => {
+  const [movies, setmovies] = useState([])
+
+  async function getMovies() {
+      const data = await MovieService.getMovies();
+      console.log(data.data.results);
+  }
+
+  useEffect(() => {
+    getMovies();
+  
+  },)
+  
+
   return (
-    <div>Home</div>
+    <section className="Home">
+      {
+        
+      }
+    </section>
   )
 }
 
