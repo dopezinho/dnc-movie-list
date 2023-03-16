@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MovieService } from "../../api/MovieService"
+import './index.scss'
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -32,6 +33,10 @@ const MovieDetail = () => {
         <div className="MovieDetail__col">
           <div className="MovieDetail__details">
             <div className="MovieDetail__detail">
+              <span>Overview:</span> {movie.overview}
+            </div>
+            </div>
+            <div className="MovieDetail__detail">
               <span>Budget:</span> {movie.budget}
             </div>
             <div className="MovieDetail__detail">
@@ -40,10 +45,6 @@ const MovieDetail = () => {
             <div className="MovieDetail__detail">
               <span>Popularity:</span> {movie.popularity}
             </div>
-            <div className="MovieDetail__detail">
-              <span>Overview:</span> {movie.overview}
-            </div>
-          </div>
           <Link to={"/"} className="MovieDetail__button">
             Voltar
           </Link>
