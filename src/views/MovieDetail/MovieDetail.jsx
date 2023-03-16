@@ -24,7 +24,10 @@ const MovieDetail = () => {
   return (
     <section className="MovieDetail">
       <div className="MovieDetail__container">
-        <div className="MovieDetail__col">
+        <div className="MovieDetail__col">          
+        <Link to={"/"} className="MovieDetail__button">
+        &#8701; Voltar
+        </Link>
           <h1 className="MovieDetail__title">{movie.title}</h1>
           <div className="MovieDetail__image">
             <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt="" />
@@ -45,9 +48,6 @@ const MovieDetail = () => {
             <div className="MovieDetail__detail">
               <span>Popularity:</span> {movie.popularity}
             </div>
-          <Link to={"/"} className="MovieDetail__button">
-            Voltar
-          </Link>
         </div>
       </div>
     </section>
