@@ -5,11 +5,14 @@ import Home from "./views/Home/Home"
 import MovieDetail from "./views/MovieDetail/MovieDetail"
 
 function App() {
+
+    const [searchValue, setSearchValue] = useState("")
+
     return (
         <div className="App">
-            <Header />
+            <Header onSubmit={(inputValue) => setSearchValue(inputValue)}/>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home searchValueProp={searchValue} />} />
                 <Route path="/movie/:id" element={<MovieDetail />} />
             </Routes>
         </div>

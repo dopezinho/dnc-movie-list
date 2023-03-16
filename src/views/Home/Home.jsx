@@ -3,7 +3,7 @@ import { MovieService } from "../../api/MovieService";
 import MovieCard from "../../components/MovieCard/MovieCard"
 
 
-const Home = () => {
+const Home = ({ searchValueProp }) => {
   const [movies, setmovies] = useState([])
 
   async function getMovies() {
@@ -14,13 +14,26 @@ const Home = () => {
        setmovies(results);
   }
 
+  async function getMoviesSearch(movieString) {
+    const { 
+      data: {results},
+     } = await MovieService.searchMovies(movieString);
+    
+     setmovies(results);
+  }
+
   useEffect(() => {
     getMovies();  
   },[]);
 
-  useEffect(() => {
-    console.log(movies);
-  });
+  useEffect (() => {
+    if (searchValueProp) {
+      getMoviesSearch(searchValueProp);
+    }
+    if (searchValueProp === "") {
+      getMovies();
+    }
+  }, [searchValueProp]);
   
 
   return (
