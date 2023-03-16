@@ -1,0 +1,40 @@
+@use "../../sass/variables" as *;
+
+header {
+    align-items: center;
+    background: $header-background;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    h1 {
+        background: $header-background;
+    }
+    form {
+        background: #fff;
+        border-radius: 10px;
+        position: relative;
+        
+        input {
+            background: #fff;
+            border-radius: 10px;
+            border: transparent;
+            color: $black;
+            height: 36px;
+            padding-left: 55px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        svg {
+            background: transparent;
+            font-size: 18px;
+            height: 20px;
+            left: 4px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);   
+        }
+    }
+}
