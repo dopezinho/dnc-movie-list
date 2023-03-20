@@ -1,0 +1,8 @@
+@use "../../sass/variables" as *;
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}

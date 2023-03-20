@@ -1,10 +1,13 @@
 @use "../../sass/variables" as *;
 
 .movie {
+    margin: 80px 0;
     
     &__image {
         img {
-            height: 300px;
+            border-radius: 10px;
+            height: 400px;
+            margin: 0 50px;
         }
     }
 }

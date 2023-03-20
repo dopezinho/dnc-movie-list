@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './index.scss'
 import { MovieService } from "../../api/MovieService";
 import MovieCard from "../../components/MovieCard/MovieCard"
 
@@ -37,7 +38,7 @@ const Home = ({ searchValueProp }) => {
   
 
   return (
-    <section className="Home">
+    <section className="home">
       {
         movies.map(movie => (
           <div key={movie.id}>
